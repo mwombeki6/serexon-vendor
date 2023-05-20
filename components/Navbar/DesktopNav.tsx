@@ -29,6 +29,7 @@ import {
   IconChevronRight,
   IconChevronDown,
 } from "@tabler/icons-react";
+import NextLink from "next/link";
 import { ThemeToggle } from "../Theme/ThemeToggle";
 
 export default function Subnavigation() {
@@ -66,14 +67,15 @@ export default function Subnavigation() {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Text
-            textAlign={useBreakpointValue({ base: "center", md: "left" })}
-            fontFamily={"heading"}
-            color={useColorModeValue("gray.800", "white")}
-          >
-            Logo
-          </Text>
-
+          <NextLink href={"/"}>
+            <Text
+              textAlign={useBreakpointValue({ base: "center", md: "left" })}
+              fontFamily={"heading"}
+              color={useColorModeValue("gray.800", "white")}
+            >
+              Logo
+            </Text>
+          </NextLink>
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
           </Flex>
@@ -86,29 +88,36 @@ export default function Subnavigation() {
           spacing={6}
         >
           <ThemeToggle />
-          <Button
-            as={"a"}
-            fontSize={"sm"}
-            fontWeight={400}
-            variant={"link"}
-            href={"#"}
-          >
-            Sign In
-          </Button>
-          <Button
-            as={"a"}
-            display={{ base: "none", md: "inline-flex" }}
-            fontSize={"sm"}
-            fontWeight={600}
-            color={"white"}
-            bg={"pink.400"}
-            href={"#"}
-            _hover={{
-              bg: "pink.300",
-            }}
-          >
-            Sign Up
-          </Button>
+          <NextLink href={"/login"}>
+            <Button
+              as={'button'}
+              //bg={"blue.500"}
+              bgColor={"red"}
+              fontSize={"sm"}
+              fontWeight={600}
+            >
+              Sign In
+            </Button>
+          </NextLink>
+
+          <NextLink href={"/signUp"}>
+            <Button
+              //as={"a"}
+              display={{ base: "none", md: "inline-flex" }}
+              fontSize={"sm"}
+              fontWeight={600}
+              //color={"white"}
+              //bgColor={'blue.500'}
+              bg={"blue.500"}
+              //bg={"pink.400"}
+              //href={"/signUp"}
+              _hover={{
+                bg: "green.300",
+              }}
+            >
+              SignUp
+            </Button>
+          </NextLink>
         </Stack>
       </Flex>
 
