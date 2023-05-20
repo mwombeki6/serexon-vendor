@@ -31,6 +31,7 @@ import {
 } from "@tabler/icons-react";
 import NextLink from "next/link";
 import { ThemeToggle } from "../Theme/ThemeToggle";
+//import { Button } from "../ui/button";
 
 export default function Subnavigation() {
   const { isOpen, onToggle } = useDisclosure();
@@ -38,8 +39,8 @@ export default function Subnavigation() {
   return (
     <Box>
       <Flex
-        bg={useColorModeValue("gray.100", "gray.800")}
-        color={useColorModeValue("gray.600", "white")}
+        bg={useColorModeValue("gray.800", "gray.800")}
+        color={useColorModeValue("gray.100", "white")}
         minH={"60px"}
         py={{ base: 2 }}
         px={{ base: 4 }}
@@ -71,7 +72,7 @@ export default function Subnavigation() {
             <Text
               textAlign={useBreakpointValue({ base: "center", md: "left" })}
               fontFamily={"heading"}
-              color={useColorModeValue("gray.800", "white")}
+              color={useColorModeValue("gray.100", "white")}
             >
               Logo
             </Text>
@@ -90,13 +91,12 @@ export default function Subnavigation() {
           <ThemeToggle />
           <NextLink href={"/login"}>
             <Button
-              as={'button'}
-              //bg={"blue.500"}
-              bgColor={"red"}
+              //display={{ base: "none", md: "inline-flex" }}
               fontSize={"sm"}
-              fontWeight={600}
+              fontWeight={400}
+              variant="outline"
             >
-              Sign In
+              login
             </Button>
           </NextLink>
 
@@ -105,14 +105,11 @@ export default function Subnavigation() {
               //as={"a"}
               display={{ base: "none", md: "inline-flex" }}
               fontSize={"sm"}
-              fontWeight={600}
+              fontWeight={"semibold"}
               //color={"white"}
-              //bgColor={'blue.500'}
-              bg={"blue.500"}
-              //bg={"pink.400"}
-              //href={"/signUp"}
+              variant={"outline"}
               _hover={{
-                bg: "green.300",
+                bg: "gray.700",
               }}
             >
               SignUp
@@ -129,9 +126,9 @@ export default function Subnavigation() {
 }
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue("gray.600", "gray.200");
-  const linkHoverColor = useColorModeValue("gray.800", "white");
-  const popoverContentBgColor = useColorModeValue("white", "gray.800");
+  const linkColor = useColorModeValue("gray.100", "gray.200");
+  const linkHoverColor = useColorModeValue("gray.500", "white");
+  const popoverContentBgColor = useColorModeValue("gray.800", "gray.800");
 
   return (
     <Stack direction={"row"} spacing={4}>
