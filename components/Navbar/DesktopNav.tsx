@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   Box,
@@ -29,6 +29,7 @@ import {
   IconChevronRight,
   IconChevronDown,
 } from "@tabler/icons-react";
+import { ThemeToggle } from "../Theme/ThemeToggle";
 
 export default function Subnavigation() {
   const { isOpen, onToggle } = useDisclosure();
@@ -84,6 +85,7 @@ export default function Subnavigation() {
           direction={"row"}
           spacing={6}
         >
+          <ThemeToggle />
           <Button
             as={"a"}
             fontSize={"sm"}
