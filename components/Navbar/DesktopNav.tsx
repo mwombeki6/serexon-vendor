@@ -39,14 +39,14 @@ export default function Subnavigation() {
   return (
     <Box>
       <Flex
-        bg={useColorModeValue("gray.800", "gray.800")}
-        color={useColorModeValue("gray.100", "white")}
+        bg={useColorModeValue("white", "gray.800")}
+        color={useColorModeValue("gray.600", "white")}
         minH={"60px"}
         py={{ base: 2 }}
         px={{ base: 4 }}
         borderBottom={1}
         borderStyle={"solid"}
-        borderColor={useColorModeValue("gray.300", "gray.900")}
+        borderColor={useColorModeValue("gray.200", "gray.900")}
         align={"center"}
       >
         <Flex
@@ -72,7 +72,7 @@ export default function Subnavigation() {
             <Text
               textAlign={useBreakpointValue({ base: "center", md: "left" })}
               fontFamily={"heading"}
-              color={useColorModeValue("gray.100", "white")}
+              color={useColorModeValue("gray.800", "white")}
             >
               Logo
             </Text>
@@ -93,7 +93,7 @@ export default function Subnavigation() {
             <Button
               //display={{ base: "none", md: "inline-flex" }}
               fontSize={"sm"}
-              fontWeight={400}
+              fontWeight={'semibold'}
               variant="outline"
             >
               login
@@ -103,13 +103,13 @@ export default function Subnavigation() {
           <NextLink href={"/signUp"}>
             <Button
               //as={"a"}
-              display={{ base: "none", md: "inline-flex" }}
+              //display={{ base: "none", md: "inline-flex" }}
               fontSize={"sm"}
               fontWeight={"semibold"}
               //color={"white"}
               variant={"outline"}
               _hover={{
-                bg: "gray.700",
+                bg: "blue.200",
               }}
             >
               SignUp
@@ -126,9 +126,9 @@ export default function Subnavigation() {
 }
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue("gray.100", "gray.200");
-  const linkHoverColor = useColorModeValue("gray.500", "white");
-  const popoverContentBgColor = useColorModeValue("gray.800", "gray.800");
+  const linkColor = useColorModeValue("gray.600", "gray.200");
+  const linkHoverColor = useColorModeValue("gray.800", "white");
+  const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
     <Stack direction={"row"} spacing={4}>
@@ -182,13 +182,13 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
       display={"block"}
       p={2}
       rounded={"md"}
-      _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
+      _hover={{ bg: useColorModeValue("blue.50", "gray.900") }}
     >
       <Stack direction={"row"} align={"center"}>
         <Box>
           <Text
             transition={"all .3s ease"}
-            _groupHover={{ color: "pink.400" }}
+            _groupHover={{ color: "blue.400" }}
             fontWeight={500}
           >
             {label}
@@ -204,7 +204,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
           align={"center"}
           flex={1}
         >
-          <Icon color={"pink.400"} w={5} h={5} as={IconChevronRight} />
+          <Icon color={"blue.400"} w={5} h={5} as={IconChevronRight} />
         </Flex>
       </Stack>
     </Link>
