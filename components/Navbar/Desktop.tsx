@@ -4,6 +4,7 @@ import { Box, Button, Flex, Stack } from "@chakra-ui/react";
 import Link from "next/link";
 import NextLink from "next/link";
 import { ThemeToggle } from "../Theme/ThemeToggle";
+import { Search } from "../Search/Search";
 
 export function DesktopNav() {
   return (
@@ -21,15 +22,10 @@ export function DesktopNav() {
         <Box>
           <Link href={""}>mwombeki</Link>
         </Box>
-        search here for all your staffss
+        <Search />
       </Stack>
 
-      <Stack
-      
-        alignItems={"center"}
-        direction="row"
-        spacing={2}
-      >
+      <Stack alignItems={"center"} direction="row" spacing={2}>
         <ThemeToggle />
         <NextLink href={"/login"}>
           <Button

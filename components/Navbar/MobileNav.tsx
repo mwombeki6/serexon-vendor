@@ -13,6 +13,7 @@ import { NavMenu } from "./NavMenu";
 import { ThemeToggle } from "../Theme/ThemeToggle";
 import Link from "next/link";
 import { AuthMenu } from "../ui/AuthMenu";
+import { Search } from "../Search/Search";
 
 export function MobileNav() {
   return (
@@ -39,7 +40,7 @@ export function MobileNav() {
         mb="1rem"
         display={{ base: "block", lg: "none" }}
       >
-        search for ur items
+        <Search />
       </Box>
     </>
   );
